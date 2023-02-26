@@ -19,8 +19,11 @@ In my opinion, doppelganger effect is not unique to biomedical data. One example
 
 **Reference**
  Sheng, Q., Shyr, Y. & Chen, X. DupChecker: a bioconductor package for checking high-throughput genomic data redundancy in meta-analysis. *BMC Bioinformatics* 15, 323 (2014). https://doi.org/10.1186/1471-2105-15-323
+ 
 Waldron, L., Riester, M., Ramos, M., Parmigiani, G., & Birrer, M. (2016). The doppelgänger effect: hidden duplicates in databases of transcriptome profiles. *JNCI: Journal of the National Cancer Institute*, 108(11).
+
 Wang, L. R., Choy, X. Y., & Goh, W. W. B. (2022). Doppelgänger spotting in biomedical gene expression data. *Iscience*, 25(8), 104788.
+
 Wang, L. R., Wong, L., & Goh, W. W. B. (2022b). How doppelgänger effects in biomedical data confound machine learning. *Drug Discovery Today*, 27(3), 678-685.
 
 

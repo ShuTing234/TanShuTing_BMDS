@@ -6,11 +6,11 @@ Moreover, detection of DE is even more challenging due to batch effect, which co
 
 One possible way to detect such duplicated data has been demonstrated by Sheng et. al. (2014). MD5 hash for each gene expression raw data file is generated to detect the potential of duplications despite the different accession number entries in the public database.  
 
-Other than that, Waldron et. al. (2016) has developed R package doppelgangR that performs Pairwise Pearson comparison analysis. Using batch-corrected Pairwise Pearson correlation coefficient, transcriptome sample pairs with unusually high correlation are identified as  
-
-duplicated samples due to sharing of specimens between collaborating research groups. Nevertheless, this could only deal with technical replicates or samples from data leakage but not doppelgangers that are simply similar by chance.  
+Other than that, Waldron et. al. (2016) has developed R package doppelgangR that performs Pairwise Pearson comparison analysis. Using batch-corrected Pairwise Pearson correlation coefficient, transcriptome sample pairs with unusually high correlation are identified as duplicated samples due to sharing of specimens between collaborating research groups. Nevertheless, this could only deal with technical replicates or samples from data leakage but not doppelgangers that are simply similar by chance.  
 
 A recent paper by Wang et. al. (2022) has demonstrated DE identification on single renal cell carcinoma (RCC) proteomics data set, using various correlation metrics including Pairwise Kendall Rank Correlation Coefficient (PKRCC), pairwise Pearson’s correlation coefficient (PPCC) , Pairwise Spearman Rank Correlation Coefficient (PSRCC). Their performance on identifying DD are evaluated, however selecting the best metrics is dependent on the nature of dataset, required stringency and sensitivity.
+
+As mentioned by Wang et. al. (2022b), DE is present in protein sequences and structure studies, as proteins sharing similarity in primary sequences often share the same functionality. Hence, a threshold of protein sequence identity is set to exclude homologous proteins, for instance in hidden Markov model to remove distantly related proteins. However, this alone is insufficient, as there are proteins with rather weak similarity in sequences but share the same function, or the other way, homologous proteins could exhibit different functions. 
 
 Other than transcriptomics, DE could also be present in other types of biomedical data, such as bio-imaging analysis, when images with the same artefact such as deformation originated from experimental procedure are distributed across training and testing dataset.	The pattern of artefact was learned by the model, leading to misclassification of features.
 

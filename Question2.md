@@ -23,3 +23,13 @@ Equation3 => dS / dt = k2ES - k1*( E0- ES(t)  )*S
 Combining both, dES/dt= -dS/dt- dP/dt 
 
 	dPdt= -dS/dt- dES/dt
+
+According to Runge-kutta 4th order : yi+1= yi + 1/6(k1+2k2+2k3+2k4), where: 
+
+k1 = hf(x0, y0)
+
+k2 = hf[x0 + (½)h, y0 + (½)k1]
+
+k3 = hf[x0 + (½)h, y0 + (½)k2]
+
+k4 = hf(x0 + h, y0 + k3)

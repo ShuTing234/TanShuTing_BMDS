@@ -13,8 +13,13 @@ Hence E(t)=E0- ES(t)  (Equation 5)
 Substituting Equation 5 into equation 1 & 3:
 
 Equation1=>  dES/ dt = k1*( E0- ES(t)  )*S – (k2+k3)ES  
+	
 	dES/ dt = k1*( E0- ES(t)  )*S – k2*ES- k3*ES
+	
 	dES/ dt = k1*( E0- ES(t)  )*S – k2*ES - dP/dt
+
 Equation3 => dS / dt = k2ES - k1*( E0- ES(t)  )*S
+
 Combining both, dES/dt= -dS/dt- dP/dt 
-		dPdt= -dS/dt- dES/dt
+
+	dPdt= -dS/dt- dES/dt

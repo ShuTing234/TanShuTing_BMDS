@@ -8,6 +8,10 @@ Equation3: dS / dt = k2ES - k1*E*S
 
 Equation4: dE/ dt = (k2 + k3)ES - k1*E*S 
 
+
+
+**2.2**  
+
 From Equation 1 & 4, dE/dt + dES/dt=0
 Hence E(t)=E0- ES(t)  (Equation 5)
 Substituting Equation 5 into equation 1 & 3:

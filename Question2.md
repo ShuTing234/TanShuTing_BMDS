@@ -58,8 +58,8 @@ k2=600
 k3=150
 time= np.arange(1,10,0.2)
 
-dESdt = lambda k1,k2,k3,E0,ES,S: k1*( E0- ES)*S - (k2+k3)*ES  
-dSdt= lambda k1,k2,E0,ES,S: k2*ES - k1*( E0- ES)*S
+dESdt = lambda k1,k2,k3,E,ES,S: k1*( E- ES)*S - (k2+k3)*ES  
+dSdt= lambda k1,k2,E,ES,S: k2*ES - k1*( E- ES)*S
 dEdt = lambda k1,k2,k3,ES,E,S: (k2 + k3)*ES - k1*E*S
 dPdt = lambda k3,ES: k3*ES
 

@@ -12,7 +12,7 @@ Equation4: $\frac{dE}{dt} = (k_{2} + k_{3})ES - k_{1} \cdot E \cdot S $
 
 # Question 2.2  
 
-From Equation 1 & 4, $\frac{dE}{dt} + \frac{dES}{dt} =0 $
+From above Equation 1 & 4, $\frac{dE}{dt} + \frac{dES}{dt} =0 $
 
 Hence $E(t)=E_{0}- ES(t) $ 
 
@@ -34,7 +34,7 @@ $\frac{dES}{dt} = -\frac{dS}{dt} - \frac{dP}{dt} $
 
 $\frac{dP}{dt} = -\frac{dS}{dt}- \frac{dES}{dt} $
 
-According to Runge-kutta 4th order, 
+### According to Runge-kutta 4th order, 
 $y_{i+1} = y_{i} + \frac{1}{6} (k_{1}+2k_{2}+2k_{3}+2k_{4}) $, where: 
 
 $k_{1} = hf(x0, y0)$

@@ -52,16 +52,56 @@ dSdt= lambda k1,k2,E0,ES,S: k2*ES - k1*( E0- ES)*S
 dEdt = lambda k1,k2,k3,ES,E,S: (k2 + k3)*ES - k1*E*S
 dPdt = lambda k3,ES: k3*ES
 
-data_mat= np.zeros((len(time),4))
+data_mat= np.zeros((len(time),4)) # [S,E,ES,P] at each time, t
 data_mat[0]= [S0,E0,ES0, P0]
 
-for t in range(len(time)):
-    k1=h*f()
-    k2 = hf[x0 + 0.5*h, y0 + 0.5*k1]
-    k3 = hf[x0 + 0.5*h, y0 + 0.5k2]
-    k4 = hf(x0 + h, y0 + k3)
-    
-    dES/ dt = k1*( E0- ES(t)  )*S – (k2+k3)ES  
-    
-    ESt= ES[t-1] + 1/6(k1+2k2+2k3+2k4)
+for x in range(len(time)):
+    t= time[x]
+    h= time[x]- time[x-1]
+    Si,Ei,ESi,Pi= data_mat[x-1,:]
+    h= t-t0 
   
+ '''   
+    k1=  dESdt(k1,k2,k3,Ei,ESi,Si)    # couldn't solve the equation
+    k2 = hf[time[x-1] + 0.5*h, ESi + 0.5*k1]
+    k3 = hf[time[x-1] + 0.5*h, ESi + 0.5k2]
+    k4 = hf(time[x-1] + h, ESi + k3)
+ '''    
+    ESt= ESi + 1/6(k1+2k2+2k3+2k4)
+        
+ '''   
+    k1=  dSdt(k1,k2,Ei,ESi,Si)    # couldn't solve the equation
+    k2 = hf[time[x-1] + 0.5*h, Si + 0.5*k1]
+    k3 = hf[time[x-1] + 0.5*h, Si + 0.5k2]
+    k4 = hf(time[x-1] + h, Si + k3)
+ '''    
+    St= Si + 1/6(k1+2k2+2k3+2k4)
+
+ '''   
+    k1=  dEdt(k1,k2,k3, ESi,Ei,Si)    # couldn't solve the equation
+    k2 = hf[time[x-1] + 0.5*h, Ei + 0.5*k1]
+    k3 = hf[time[x-1] + 0.5*h, Ei + 0.5k2]
+    k4 = hf(time[x-1] + h, Ei + k3)
+ '''    
+    Et= Ei + 1/6(k1+2k2+2k3+2k4)
+
+ '''   
+    k1=  dPdt(k3, ESi)    # couldn't solve the equation
+    k2 = hf[time[x-1] + 0.5*h, Pi + 0.5*k1]
+    k3 = hf[time[x-1] + 0.5*h, Pi + 0.5k2]
+    k4 = hf(time[x-1] + h, Pi + k3)
+ '''    
+    Pt= Pi + 1/6(k1+2k2+2k3+2k4)
+    
+    data_mat[x,:] = [St,Et,ESt,Pt]
+
+
+plt.plot(time, data_mat[:,1], label = "S")
+plt.plot(time, data_mat[:,2], label = "E")
+plt.plot(time, data_mat[:,3], label = "ES")
+plt.plot(time, data_mat[:,4], label = "P")
+plt.xlabel('Time')
+plt.ylabel('Concentration (uM)')
+plt.legend()
+plt.show()
+```

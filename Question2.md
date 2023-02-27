@@ -1,4 +1,4 @@
-**Question 2.1**  
+# Question 2.1
 
 Equation1: $\frac{dES}{dt} = k_{1} \cdot S \cdot E   –  (k_{2}+k_{3})ES  $
 
@@ -10,7 +10,7 @@ Equation4: $\frac{dE}{dt} = (k_{2} + k_{3})ES - k_{1} \cdot E \cdot S $
 
 
 
-**Question 2.2**  
+# Question 2.2  
 
 From Equation 1 & 4, $\frac{dE}{dt} + \frac{dES}{dt} =0 $
 

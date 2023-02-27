@@ -1,47 +1,54 @@
-**2.1**  
+**Question 2.1**  
 
-Equation1: dES/ dt = k1*E*S – (k2+k3)ES  
+Equation1: $\frac{dES}{dt} = k_{1} \cdot S \cdot E   –  (k_{2}+k_{3})ES  $
 
-Equation2: dP / dt = k3*ES
+Equation2: $\frac{dP}{dt} = k_{3} \cdot ES$
 
-Equation3: dS / dt = k2ES - k1*E*S
+Equation3: $\frac{dS}{dt} = k_{2} \cdot ES - k_{1} \cdot E \cdot S$
 
-Equation4: dE/ dt = (k2 + k3)ES - k1*E*S 
+Equation4: $\frac{dE}{dt} = (k_{2} + k_{3})ES - k_{1} \cdot E \cdot S $
 
 
 
-**2.2**  
+**Question 2.2**  
 
-From Equation 1 & 4, dE/dt + dES/dt=0
-Hence E(t)=E0- ES(t)  (Equation 5)
-Substituting Equation 5 into equation 1 & 3:
+From Equation 1 & 4, $\frac{dE}{dt} + \frac{dES}{dt} =0 $
 
-Equation1=>  dES/ dt = k1*( E0- ES(t)  )*S – (k2+k3)ES  
+Hence $E(t)=E_{0}- ES(t) $ 
+
+Substituting into equation 1 & 3:
+
+Equation1=> 
+
+$\frac{dES}{dt} = k_{1}( E_{0} - ES(t)) S – ( k_{2}+k_{3} ) ES $  
 	
-	dES/ dt = k1*( E0- ES(t)  )*S – k2*ES- k3*ES
+$\frac{dES}{dt} = k_{1}( E_{0} - ES(t)) S – k_{2}ES+k_{3}ES $  
 	
-	dES/ dt = k1*( E0- ES(t)  )*S – k2*ES - dP/dt
+$\frac{dES}{dt} = k_{1} ( E_{0} - ES(t)  )  S – k_{2} ES - \frac{dP}{dt} $
 
-Equation3 => dS / dt = k2ES - k1*( E0- ES(t)  )*S
+Equation3 => 
+$\frac{dS}{dt} = k_{2}ES - k_{1} ( E_{0}- ES(t)  )S $
 
-Combining both, dES/dt= -dS/dt- dP/dt 
+Combining both, 
+$\frac{dES}{dt} = -\frac{dS}{dt} - \frac{dP}{dt} $
 
-	dPdt= -dS/dt- dES/dt
+$\frac{dP}{dt} = -\frac{dS}{dt}- \frac{dES}{dt} $
 
-According to Runge-kutta 4th order : yi+1= yi + 1/6(k1+2k2+2k3+2k4), where: 
+According to Runge-kutta 4th order, 
+$y_{i+1} = y_{i} + \frac{1}{6} (k_{1}+2k_{2}+2k_{3}+2k_{4}) $, where: 
 
-k1 = hf(x0, y0)
+$k_{1} = hf(x0, y0)$
 
-k2 = hf[x0 + (½)h, y0 + (½)k1]
+$k_{2} = hf[x_{0} + (½)h, y_{0} + (½)k_{1}]$
 
-k3 = hf[x0 + (½)h, y0 + (½)k2]
+$k_{3} = hf[x_{0} + (½)h, y_{0} + (½)k_{2}]$
 
-k4 = hf(x0 + h, y0 + k3)
+$k_{4} = hf(x_{0} + h, y_{0} + k_{3})$
 
 
 ```
 import numpy as np
-
+import matplotlib as plt
 E0=1
 S0=10
 ES0=0
